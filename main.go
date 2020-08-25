@@ -1,12 +1,22 @@
 package main
 
-import (
-	"fmt"
-	"lileetcode.com/letcodearray"
-)
+type Abs interface {
+	add()
+}
+
+type Flag struct {
+
+}
+
+func (f *Flag) add(){
+}
+
+
 
 func main() {
-	s := []int{1,8,6,2,5,4,8,3,7}
-	sum := letcodearray.MaxAreaDoublePoint(s)
-	fmt.Println(sum)
+	 var a Abs
+	 f:= Flag{}
+	 a = &f
+	 a.add()
+
 }
