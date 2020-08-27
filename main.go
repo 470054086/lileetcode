@@ -1,22 +1,14 @@
 package main
 
-type Abs interface {
-	add()
+import (
+	"fmt"
+	"lileetcode.com/letcodearray"
+)
+
+type Name struct {
+	name string
 }
-
-type Flag struct {
-
-}
-
-func (f *Flag) add(){
-}
-
-
-
 func main() {
-	 var a Abs
-	 f:= Flag{}
-	 a = &f
-	 a.add()
-
+	reverse := letcodearray.ReverseUpgrade(2147483412)
+	fmt.Println(reverse)
 }
