@@ -1,7 +1,6 @@
-package main
+package lettcodestring
 
 import (
-	"fmt"
 	"strings"
 )
 
@@ -9,10 +8,6 @@ import (
 
  */
 
-func main() {
-	substring := lengthOfLongestSubstringUpgrade("abcabca")
-	fmt.Println(substring)
-}
 
 /**
 这道题主要用到思路是：滑动窗口
@@ -85,9 +80,6 @@ func lengthOfLongestSubstringUpgrade(s string) int {
 	}
 
 	return Length
-
-
-
 }
 
 func max(i, j int) int {

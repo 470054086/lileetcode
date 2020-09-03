@@ -9,6 +9,9 @@ type Name struct {
 	name string
 }
 func main() {
-	reverse := letcodearray.ReverseUpgrade(2147483412)
-	fmt.Println(reverse)
+	//toInt := lettcodestring.RomanToInt("LVIII")
+	//fmt.Println(toInt)
+	s:= []string{"flower","f","flow","floight"}
+	prefix := letcodearray.CommonPrefix(s)
+	fmt.Println(prefix)
 }
