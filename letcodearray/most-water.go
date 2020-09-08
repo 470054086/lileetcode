@@ -33,7 +33,6 @@ func MaxArea(height []int) int {
 	}
 	return max
 }
-
 /**
 使用双边指针
 */
