@@ -14,12 +14,12 @@ package letcodearray
 输入: ["dog","racecar","car"]
 输出: ""
 解释: 输入不存在公共前缀。
- */
+*/
 
 /**
 1. 通过两次循环比较  如果找到相同的 就改变当前获取的
 2. 如果循环之后 相同的是0个 则停止循环
- */
+*/
 
 func CommonPrefix(s []string) string {
 	// 获取数组的第一个
@@ -44,4 +44,27 @@ func lcp(pre, s string) string {
 		index++
 	}
 	return s[:index]
+}
+
+/**
+纵向比较法
+*/
+
+func LongestCommonPrefix(s []string) string {
+	if len(s) == 0 {
+		return ""
+	}
+	// 外层是S[0] 第一个参数 将他和后面的数据进行纵向比较
+	// 如果到最后 和 比较到不相等的时候 就进行返回即可
+	// 如果循环完了 都是相等的 则返回S[0]即可
+	for i := 0; i < len(s[0]); i++ {
+		for j := 1; j < len(s); j++ {
+			// 如果循环到最后
+			// 1.如果当前的不等于s[0]的数据
+			if i == len(s[j]) || s[j][i] != s[0][i] {
+				return s[0][:i]
+			}
+		}
+	}
+	return s[0]
 }
