@@ -56,21 +56,22 @@ func HuiwenNum(x int) bool {
 	if x < 0 {
 		return false
 	}
-	// 计算div最大的位数
+	// 计算div最大的位数 即3位的话 就是1000 2位的话 就是100
 	div := 1
 	for x/div >= 10 {
 		div *= 10
 	}
 	for x > 0 {
-		// 前面的数字
+		// 前面的数字 使用除法可以获取到第一位数
 		left := x / div
-		// 后面的数字
+		// 后面的数字 使用%可以获取到最后一位数
 		right := x % 10
 		if left != right {
 			return false
 		}
 		// 去除回文的第一位和最后一位
 		x = (x % div) / 10
+		// 减少了两位 除数也相应的减少两位
 		div = div / 100
 	}
 	return true

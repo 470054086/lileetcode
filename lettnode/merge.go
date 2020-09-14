@@ -20,7 +20,7 @@ func MergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		Val:  -1,
 		Next: nil,
 	}
-	// 当节点
+	// 当前节点
 	res := pthread
 	for l1 != nil && l2 != nil {
 		// 如果小于的话 则下一个链接是l1

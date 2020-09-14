@@ -57,6 +57,18 @@ func Reverse(x int) int {
 	}
 }
 
+
+func reverseString(s string) string {
+	// 转化为Rune
+	r := []rune(s)
+	// 进行字符串反转
+	for i, j := 0, len(r)-1; i < j; i, j = i+1, j-1 {
+		r[i], r[j] = r[j], r[i]
+	}
+	return string(r)
+}
+
+// 使用 %10 就是当前的数字
 /**
 反转整数的方法可以与反转字符串进行类比。
 
@@ -78,18 +90,6 @@ rev = temp;
 链接：https://leetcode-cn.com/problems/reverse-integer/solution/zheng-shu-fan-zhuan-by-leetcode/
 
  */
-func reverseString(s string) string {
-	// 转化为Rune
-	r := []rune(s)
-	// 进行字符串反转
-	for i, j := 0, len(r)-1; i < j; i, j = i+1, j-1 {
-		r[i], r[j] = r[j], r[i]
-	}
-	return string(r)
-}
-
-// 使用 %10 就是当前的数字
-
 func ReverseUpgrade(x int) int {
 	rev := 0
 	for x != 0 {
