@@ -2,58 +2,51 @@ package main
 
 import (
 	"fmt"
-	"lileetcode.com/lettlink"
+	"lileetcode.com/tree"
 )
 
 func main() {
-	//l := &lettlink.ListNode{
-	//	Val: 1,
-	//	Next: &lettlink.ListNode{
-	//		Val: 2,
-	//		Next: &lettlink.ListNode{
-	//			Val: 3,
-	//			Next: &lettlink.ListNode{
-	//				Val: 3,
-	//				Next: &lettlink.ListNode{
-	//					Val: 2,
-	//					Next: &lettlink.ListNode{
-	//						Val:  1,
-	//						Next: nil,
-	//					},
-	//				},
-	//			},
-	//		},
-	//	},
-	//}
-	l := &lettlink.ListNode{
-		Val: 1,
-		Next: &lettlink.ListNode{
-			Val:  2,
-			Next: &lettlink.ListNode{
-				Val:  3,
-				Next:&lettlink.ListNode{
-					Val:  2,
-					Next: &lettlink.ListNode{
-						Val:  1,
-						Next: nil,
-					},
+	t := &tree.TreeNode{
+		Val: 5,
+		Left: &tree.TreeNode{
+			Val: 4,
+			Left: &tree.TreeNode{
+				Val: 11,
+				Left: &tree.TreeNode{
+					Val:   7,
+					Left:  nil,
+					Right: nil,
+				},
+				Right: &tree.TreeNode{
+					Val:   2,
+					Left:  nil,
+					Right: nil,
+				},
+			},
+			Right: nil,
+		},
+		Right: &tree.TreeNode{
+			Val: 8,
+			Left: &tree.TreeNode{
+				Val:   13,
+				Left:  nil,
+				Right: nil,
+			},
+			Right: &tree.TreeNode{
+				Val: 4,
+				Left: &tree.TreeNode{
+					Val:   5,
+					Left:  nil,
+					Right: nil,
+				},
+				Right: &tree.TreeNode{
+					Val:   1,
+					Left:  nil,
+					Right: nil,
 				},
 			},
 		},
 	}
-
-	//r := &lettlink.ListNode{
-	//	Val: 2,
-	//	Next: &lettlink.ListNode{
-	//		Val:  9,
-	//		Next: &lettlink.ListNode{
-	//			Val:  5,
-	//			Next: nil,
-	//		},
-	//	},
-	//
-	//}
-
-	palindrome := lettlink.IsPalindrome(l)
+	palindrome := tree.PathSum(t, 22)
 	fmt.Println(palindrome)
 }
